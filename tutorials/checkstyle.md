@@ -33,7 +33,6 @@ Checkstyle configuration matching [our Java coding standard](../conventions/java
 To suppress a rule for a segment of code, you can add in the comment `//CHECKSTYLE.OFF: RuleName` at the start of the code segment and `//CHECKSTYLE.ON: RuleName` at the end of the segment.
 </box>
 
-
 <!-- ==================================================================================================== -->
 
 ## Using Checkstyle with Gradle
@@ -57,6 +56,7 @@ checkstyle {
 ```
 
 Some relevant Gradle _tasks_ added by the CheckStyle plugin.
+
 * `checkstyleMain`: checks if the main code complies with the style rules
 * `checkstyleTest`: checks if the test code complies with the style rules
 
@@ -85,15 +85,15 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 {{ icon_tip }} If your project uses Gradle, you can check the `build.gradle` file to find the correct version.<br>
    ![checkstyle idea scan scope](images/checkstyle/checkstyle-idea-scan-scope.png)
 
-1.  Click the `+` sign under `Configuration File`
+1. Click the `+` sign under `Configuration File`
 
-1.  Enter an arbitrary description e.g. addressbook
+1. Enter an arbitrary description e.g. addressbook
 
-1.  Select `Use a local Checkstyle file`
+1. Select `Use a local Checkstyle file`
 
-1.  Use the checkstyle configuration file found at `config/checkstyle/checkstyle.xml`
+1. Use the checkstyle configuration file found at `config/checkstyle/checkstyle.xml`
 
-1.  Click `Next` \> `Finish`
+1. Click `Next` \> `Finish`
 
 1. Mark `Active` for the newly imported check configuration<br>
   ![checkstyle idea configuration](images/checkstyle/checkstyle-idea-configuration.png)
@@ -106,12 +106,14 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 #### Troubleshooting
 
 **Problem: When importing `checkstyle.xml`, Checkstyle-IDEA plugin complains that `The Checkstyle rules file could not be parsed. …​ The file has been blacklisted for 60s.`**
+
 * Reason: `checkstyle.xml` is written for a particular version, but the plugin was not configured to the correct version.
 * Solution: Ensure that you have selected the correct `Checkstyle
     version` that matches the version in `build.gradle` and have clicked
     `Apply`, as `checkstyle.xml` is written for Gradle’s checkstyle.
 
 **Problem: After setting up `checkstyle.xml`, Checkstyle-IDEA plugin does not seem to highlight the errors / real-time scanning seems broken.**
+
 * Reason: The plugin may not immediately run after setting it up.
 * Solution: Restart the IDE.
 
